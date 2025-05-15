@@ -44,7 +44,7 @@ for root in root_dirs:
 
         df["Year"] = df["RevTime"].dt.strftime("%Y")
         df["Month"] = df["RevTime"].dt.strftime("%m")
-        df["RevTime"] = df["RevTime"].dt.strftime("%Y-%m-%d %H:%M")
+        df["RevTime"] = df["RevTime"].dt.strftime("%Y-%m-%d %H:%M:%S")
         df["DataValue"] = pd.to_numeric(df["DataValue"], errors="coerce").fillna(0.0)
         df["SensorID"] = file_name
         df = df[["SensorID", "DataValue", "RevTime", "Year", "Month"]]
